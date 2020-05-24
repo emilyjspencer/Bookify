@@ -11,24 +11,24 @@ router.route('/AddBook').post((req, res, next) => {
       return next(error)
     } else {
       console.log(data)
-      res.json(data)
+      return res.json(data)
     }
   })
 });
 
 
-router.route('/').get((req, res) => {
+router.route('/').get((req, res, next) => {
   bookSchema.find((error, data) => {
     if (error) {
       return next(error)
     } else {
-      res.json(data)
+      return res.json(data)
     }
   })
 })
 
 
-router.route('/EditBook/:id').get((req, res) => {
+router.route('/EditBook/:id').get((req, res, next) => {
   bookSchema.findById(req.params.id, (error, data) => {
     if (error) {
       return next(error)
