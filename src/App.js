@@ -4,13 +4,15 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 import CreateBook from './components/CreateBook';
-import EditBook from './components/EditBook'
+import EditBook from './components/EditBook';
+import BookList from './components/BookList';
 
 function App() {
   return (
     <div className="App">
-      < CreateBook />
-      < EditBook />
+      <CreateBook />
+      <EditBook />
+      <BookList />
     </div>
   );
 }
