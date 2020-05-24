@@ -23,22 +23,37 @@ function App() {
           <Container>
             <Navbar.Brand>
               <Link to={'/AddBook'} className='nav-link'>
-                Add Book
+                Bookify
               </Link>
             </Navbar.Brand>
             <Nav className="justify-content-end">
               <Nav>
-                <Link to={'/BookList'} className='nav-link'>
+                <Link to={'/AddBook'} className='nav-link'>
+                  Add Book
+                </Link>
+              </Nav>
+              <Nav>
+                <Link to={'/BookList'} className='nav-Link'>
                   Book List
                 </Link>
               </Nav>
-            </Nav>
+              </Nav>
           </Container>
         </Navbar>
       </header>
-      <AddBook />
-      <EditBook />
-      <BookList />
+      <Container>
+        <Row>
+          <Col md={12}>
+            <div className="wrapper">
+              <Switch>
+                <Route exact path='/' component={AddBook} />
+                <Route path='/EditBook/:id' component={EditBook} />
+                <Route path='/BookList' component={BookList} />
+                  </Switch>
+    </div>
+    </Col>
+    </Row>
+    </Container>
     </div>
     </Router>
   );
