@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import axios from 'axios';
 
 class AddBook extends Component {
 
@@ -45,6 +46,16 @@ class AddBook extends Component {
     console.log(`Author: ${this.state.author}`);
     console.log(`Genre: ${this.state.genre}`);
     console.log(`Isbn: ${this.state.isbn}`);
+
+    const bookObject = {
+      title: this.state.title,
+      author: this.state.author,
+      genre: this.state.genre,
+      isbn: this.state.isbn
+    };
+    axios.post('http://localhost:4000/books/AddBook', bookObject)
+      .then(res => console.log(res.data));
+      
 
     this.setState({title: '', author: '', genre: '', isbn: ''})
   }
