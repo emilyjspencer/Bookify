@@ -1,6 +1,6 @@
-let mongoose = require('mongoose'),
-  express = require('express'),
-  router = express.Router();
+let mongoose = require('mongoose');
+let  express = require('express');
+let router = express.Router();
 
 
 let bookSchema = require('../models/Book');
@@ -11,7 +11,7 @@ router.route('/AddBook').post((req, res, next) => {
       return next(error)
     } else {
       console.log(data)
-      return res.json(data)
+      res.json(data)
     }
   })
 });
@@ -22,7 +22,7 @@ router.route('/').get((req, res, next) => {
     if (error) {
       return next(error)
     } else {
-      return res.json(data)
+      res.json(data)
     }
   })
 })
