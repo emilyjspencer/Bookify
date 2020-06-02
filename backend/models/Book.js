@@ -18,4 +18,4 @@ let BookSchema = new Schema({
     collection: 'books'
   })
 
-module.exports = mongoose.model('Book', bookSchema)
+module.exports = mongoose.model('Book', BookSchema)
